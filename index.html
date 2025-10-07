@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>태경세무회계</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy: #0a192f;
+      --midnavy: #112240;
+      --lightnavy: #233554;
+      --point: #64ffda;
+      --text-sub: #ccd6f6;
+      --text-light: #e6f1ff;
+    }
+    .safe-bottom { padding-bottom: max(env(safe-area-inset-bottom), 16px); }
+    /* Scroll reveal */
+    .reveal{opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; will-change: opacity, transform;}
+    .reveal.show{opacity:1; transform:none;}
+    .reveal[style*="--delay"]{transition-delay: var(--delay);} 
+  </style>
+</head>
+<body class="bg-[var(--navy)] text-white font-sans">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[var(--midnavy)]/95 backdrop-blur border-b border-[var(--lightnavy)]">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <a href="#" class="text-xl font-bold text-[var(--point)]">태경세무회계</a>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#about" class="hover:text-[var(--point)]">업무분야</a>
+        <a href="#team" class="hover:text-[var(--point)]">구성원소개</a>
+        <a href="#cases" class="hover:text-[var(--point)]">성공사례</a>
+        <!-- ▼ 추가: 정부지원금(성공사례 옆) -->
+        <a href="https://blog.naver.com/PostList.naver?blogId=taekyung_tax&from=postList&categoryNo=21">지원금안내</a>
+        <a href="https://blog.naver.com/PostList.naver?blogId=taekyung_tax&from=postList&categoryNo=8">공지사항</a>
+        <a href="#contact" class="hover:text-[var(--point)]">문의하기</a>
+      </nav>
+      <button id="menu-btn" aria-label="메뉴 열기" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[var(--lightnavy)]">
+        <span class="sr-only">메뉴</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-nav" class="md:hidden hidden border-t border-[var(--lightnavy)] bg-[var(--midnavy)]">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-[var(--text-light)]">
+        <a href="#about" class="py-2">업무분야</a>
+        <a href="#team" class="py-2">구성원소개</a>
+        <a href="#cases" class="py-2">성공사례</a>
+        <!-- ▼ 추가: 모바일 상단 메뉴에도 동일 반영 -->
+        <a href="https://blog.naver.com/PostList.naver?blogId=taekyung_tax&from=postList&categoryNo=21">정부지원금</a>
+        <a href="https://blog.naver.com/PostList.naver?blogId=taekyung_tax&from=postList&categoryNo=8">공지사항</a> 
+        <a href="#contact" class="py-2">문의하기</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16 md:py-24 px-4 bg-[var(--navy)]">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+      믿을 수 있는 파트너,<br class="block md:hidden"/>
+      <span class="block md:inline">태경세무회계</span>
+    </h1>
+    <p class="text-base md:text-lg text-[var(--text-sub)] max-w-2xl mx-auto">풍부한 경험과 전문성을 바탕으로 세무·회계 업무를 대행해드립니다.</p>
+    <div class="mt-6 flex items-center justify-center gap-3">
+      <a href="#contact" class="px-4 py-2 md:px-5 md:py-3 rounded-md bg-[var(--point)] text-black font-semibold">상담 예약</a>
+      <a href="#about" class="px-4 py-2 md:px-5 md:py-3 rounded-md border border-[var(--point)] text-[var(--point)]">업무분야 보기</a>
+    </div>
+  </section>
+
+  <!-- 업무분야 -->
+  <section id="about" class="mx-auto max-w-6xl px-4 py-12 md:py-20">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">업무분야</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-5 md:p-8 bg-[var(--midnavy)] shadow-md">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">세무기장 및 세무신고</h3>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base">
+          <li>법인/개인 장부 기장, 부가세, 원천세, 종합소득세, 법인세 신고 대행</li>
+          <li>성실신고 확인, 각종 세무 조정 업무</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-5 md:p-8 bg-[var(--midnavy)] shadow-md">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">양도·상속·증여세 컨설팅 및<br> 신고 대행</h3>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base">
+          <li>상속세 및 증여세 사전 시뮬레이션 및 절세전략 수립</li>
+          <li>가업승계, 재산 이전, 세법 리스크 점검</li>
+          <li>양도소득세 모의 계산</li>
+          <li>양도·상속·증여세 신고 대행</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-5 md:p-8 bg-[var(--midnavy)] shadow-md">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">법인/사업 구조 자문</h3>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base">
+          <li>법인 사업자등록, 전환, 청산, 합병 분할</li>
+          <li>지배구조 및 주주 구성 최적화</li>
+          <li>가지급금·업무무관자산 관리</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-5 md:p-8 bg-[var(--midnavy)] shadow-md">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">세무조사·조세불복</h3>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base">
+          <li>세무조사 사전 컨설팅 및 대응</li>
+          <li>경정청구, 이의신청, 심판청구 대리</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-5 md:p-8 bg-[var(--midnavy)] shadow-md">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">4대보험·노무 연계 서비스</h3>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base">
+          <li>4대보험 취득/상실 신고</li>
+          <li>고용/산재 보험료 관련 컨설팅</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-5 md:p-8 bg-[var(--midnavy)] shadow-md">
+        <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">세액감면, 공제 및 각종 지원금 안내</h3>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base">
+          <li>창업중소기업 세액감면, 고용증대세액공제 등 주요 감면세액 검토</li>
+          <li>연구개발비 세액공제</li>
+          <li>청년고용·일자리 지원금 연계</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 구성원 소개 -->
+  <section id="team" class="mx-auto max-w-6xl px-4 pb-16 md:pb-24">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">구성원소개</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- 김낙완 -->
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--midnavy)] text-center">
+        <img src="assets/knw1.png" alt="김낙완 세무사" class="mx-auto full mb-2 w-48 md:w-48 h-60 md:h-80 object-cover" loading="lazy"/>
+        <div class="text-xl font-semibold mb-2">세무사 김낙완</div>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base leading-relaxed md:leading-normal text-left">
+          <li>- 중부지방국세청, 수원세무서, 평택세무서 등 국세공무원 경력 24년</li>
+          <li>- 2004년 41회 세무사 시험 합격</li>
+          <li>- (前) 세무사 김낙완 사무소 대표세무사</li>
+          <li>- (前) 세무법인 태경 오산지점 대표세무사</li>
+          <li>- (現) 태경세무회계 세무사</li>
+        </ul>
+      </div>
+      <!-- 김경래 -->
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--midnavy)] text-center">
+        <img src="assets/kgr.png" alt="김경래 세무사" class="mx-auto full mb-2 w-48 md:w-48 h-60 md:h-80 object-cover" loading="lazy"/>
+        <div class="text-xl font-semibold mb-2">세무사 김경래</div>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base leading-relaxed md:leading-normal text-left">
+          <li>- 제 55회 세무사 시험 합격</li>
+          <li>- 아주대학교 경영학과 학사 졸업</li>
+          <li>- 아주대학교 경영학과 회계전공 석사 졸업</li>
+          <li>- (前) 동화성세무서 영세납세자지원단 나눔세무사</li>
+          <li>- (前) 세무법인 태경 오산지점 근무</li>
+          <li>- (現) 태경 세무회계 세무사</li>
+          <li>- (現) **지방국세청 **세무서 ****위원</li>
+        </ul>
+      </div>
+      <!-- 김형래 -->
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--midnavy)] text-center">
+        <img src="assets/hyung.png" alt="김형래 총괄" class="mx-auto full mb-2 w-48 md:w-48 h-60 md:h-80 object-cover" loading="lazy"/>
+        <div class="text-xl font-semibold mb-2">총괄 김형래</div>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base leading-relaxed md:leading-normal text-left">
+          <li>- 명지대학교 졸업</li>
+          <li>- (前) 세무법인 태경 오산지점 근무</li>
+          <li>- (現) 태경세무회계 근무</li>
+          <li>- 법인/개인 세무 기장 및 컨설팅</li>
+          <li>- 지원금 컨설팅</li>
+        </ul>
+      </div>
+      <!-- 김택빈 -->
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--midnavy)] text-center">
+        <img src="assets/taekyung.png" alt="김택빈 변호사" class="mx-auto full mb-2 w-48 md:w-48 h-60 md:h-80 object-cover" loading="lazy"/>
+        <div class="text-xl font-semibold mb-2">자문위원 변호사 김택빈</div>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base leading-relaxed md:leading-normal text-left">
+          <li>- 법률 자문 및 소송 대응 전문</li>
+        </ul>
+      </div>
+      <!-- 이재원 -->
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--midnavy)] text-center">
+        <img src="assets/LJW.png" alt="이재원 법무사" class="mx-auto full mb-2 w-48 md:w-48 h-60 md:h-80 object-cover" loading="lazy"/>
+        <div class="text-xl font-semibold mb-2">자문위원 법무사 이재원</div>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base leading-relaxed md:leading-normal text-left">
+          <li>- 단국대학교 경제학과 졸업</li>
+          <li>- (前)쌍용자동차 해외사업부문 근무</li>
+          <li>- (前)대우자동차 수출부문 근무</li>
+          <li>- (前)에이프릴피알앤마케팅 이사</li>
+          <li>- (前)Petroleum Pipeline Project Company(서아프리카) 임원 </li>
+          <li>- (現)법무사이재원사무소 대표</li>
+          <li>- (現)경기도청 법률상담위원</li>
+          <li>- (現)주택도시보증공사 법률상담위원</li>
+        </ul>
+      </div>
+      <!-- 양형찬 -->
+      <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--midnavy)] text-center">
+        <img src="assets/yhc.png" alt="양형찬 감정평가사" class="mx-auto full mb-2 w-48 md:w-48 h-60 md:h-80 object-cover" loading="lazy"/>
+        <div class="text-xl font-semibold mb-2">자문위원 감정평가사 양형찬</div>
+        <ul class="text-[var(--text-sub)] space-y-2 text-sm md:text-base leading-relaxed md:leading-normal text-left">
+          <li>- 수원 창현고등학교 졸업</li>
+          <li>- 고려대학교 행정학 학사 및 석사 졸업</li>
+          <li>- (前)서울시정개발연구원</li>
+          <li>- (前)한국감정평가연구원</li>
+          <li>- (前)리얼티뱅크 감정평가법인 외 근무</li>
+          <li>- (現)하임C&A감정평가사 사무소 대표 및 감정평가사</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 성공사례 -->
+  <section id="cases" class="bg-[var(--midnavy)] border-y border-[var(--lightnavy)]">
+    <h2 class="text-2xl md:text-3xl font-bold pt-10 md:pt-14 text-center">성공사례</h2>
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--lightnavy)] text-white">
+          <div class="text-lg font-semibold mt-1">종합소득세 약 4천만원 환급</div>
+          <p class="mt-3 text-base leading-relaxed text-[var(--text-light)]"> 음식점업 개인사업자 Y, 고용관련 세액공제로 5년치 종합소득세 총 4천만원 환급(G 세무서 관할) </p>
+        </div>
+        <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--lightnavy)] text-white">
+          <div class="text-lg font-semibold mt-1">종합소득세 약 1천 5백만원 환급</div>
+          <p class="mt-3 text-base leading-relaxed text-[var(--text-light)]"> 전문직 개인사업자 K, 고용관련 세액공제로 종합소득세 약 1천 5백천만원 환급(S 세무서 관할) </p>
+        </div>
+        <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--lightnavy)] text-white">
+          <div class="text-lg font-semibold mt-1">양도소득세 약 3천4백만원 환급</div>
+          <p class="mt-3 text-base leading-relaxed text-[var(--text-light)]"> 양도인 C, 농지 관련 세액감면 적용으로 양도소득세 약 3천 4백만원 환급(D 세무서 관할)</p>
+        </div>
+        <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--lightnavy)] text-white">
+          <div class="text-lg font-semibold mt-1">법인세 약 2천7백만원 환급</div>
+          <p class="mt-3 text-base leading-relaxed text-[var(--text-light)]"> 정보통신업 주식회사 O, 연구 및 인력개발 관련 세액공제 적용으로 법인세 약 2천7백만원 환급(H 세무서 관할)</p>
+        </div>
+        <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--lightnavy)] text-white">
+          <div class="text-lg font-semibold mt-1">법인세 약 1천만원 환급</div>
+          <p class="mt-3 text-base leading-relaxed text-[var(--text-light)]"> 제조업 주식회사 D, 신규 설비투자 관련 세액공제 적용으로 법인세 약 1천만원 환급(D 세무서 관할)</p>
+        </div>
+        <div class="rounded-2xl border border-[var(--lightnavy)] p-8 bg-[var(--lightnavy)] text-white">
+          <div class="text-lg font-semibold mt-1">법인세 약 7백만원 환급</div>
+          <p class="mt-3 text-base leading-relaxed text-[var(--text-light)]"> 서비스업 주식회사 T, 신규 창업 관련 세액감면 적용으로 법인세 약 7백만원 환급(D 세무서 관할)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의하기 -->
+  <section id="contact" class="mx-auto max-w-6xl px-4 pb-24 md:pb-24 pt-12 md:pt-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">문의하기</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <form class="space-y-3 md:space-y-4" onsubmit="event.preventDefault(); alert('전송 기능은 연결 후 사용 가능합니다.');">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+          <input class="w-full border rounded-md px-3 py-3 bg-[var(--lightnavy)] text-white placeholder-slate-300" placeholder="성함" />
+          <input class="w-full border rounded-md px-3 py-3 bg-[var(--lightnavy)] text-white placeholder-slate-300" placeholder="연락처" />
+        </div>
+        <input class="w-full border rounded-md px-3 py-3 bg-[var(--lightnavy)] text-white placeholder-slate-300" placeholder="이메일 (선택)" />
+        <textarea class="w-full border rounded-md px-3 py-3 h-36 bg-[var(--lightnavy)] text-white placeholder-slate-300" placeholder="문의 내용 (간략히)"></textarea>
+        <button class="w-full md:w-auto px-5 py-3 rounded-md bg-[var(--point)] text-black font-semibold">문의 보내기</button>
+        <p class="text-xs text-[var(--text-sub)]">제출 시 개인정보 처리방침에 동의한 것으로 간주됩니다.</p>
+      </form>
+      <div class="rounded-2xl border p-6 md:p-8 bg-[var(--midnavy)]">
+        <div class="flex items-center gap-2"><span>📞</span><a href="tel:01065062135" class="hover:text-[var(--point)]">010-6506-2135</a></div>
+        <div class="flex items-center gap-2 mt-2"><span>☎️</span><span>031-373-7511</span></div>
+        <div class="flex items-center gap-2 mt-2"><span>✉️</span><a href="mailto:tax_gr@naver.com" class="hover:text-[var(--point)]">tax_gr@naver.com</a></div>
+        <div class="flex items-center gap-2 mt-2"><span>📍</span><span>경기도 화성시 동탄대로 683, 215-216호(영천동, SH스퀘어2)</span></div>
+        <div class="mt-6 flex items-center gap-3">
+          <a href="https://pf.kakao.com/_ayyxkxb" class="px-3 py-2 rounded-md border border-[var(--point)] text-[var(--point)]">카카오 채널</a>
+
+          <a href="https://blog.naver.com/taekyung_tax" target="_blank" class="px-3 py-2 rounded-md border text-[var(--text-light)]">블로그</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 모바일 하단 고정 CTA -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 bg-[var(--midnavy)]/95 border-t border-[var(--lightnavy)] safe-bottom z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
+      <a href="tel:01065062135" class="flex-1 text-center py-3 rounded-md bg-[var(--point)] text-black font-semibold">전화하기</a>
+      <a href="#contact" class="flex-1 text-center py-3 rounded-md border border-[var(--point)] text-[var(--point)] font-semibold">상담예약</a>
+    </div>
+  </div>
+
+  <script>
+    // 모바일 메뉴 토글
+    const btn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (btn && mobileNav) {
+      btn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+      mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.add('hidden')));
+    }
+
+    // ===== Scroll Reveal =====
+    const revealTargets = [
+      // Hero
+      'h1', 'section:nth-of-type(1) p', 'section:nth-of-type(1) a',
+      // Section headings
+      '#about h2', '#team h2', '#cases h2', '#contact h2',
+      // Cards & blocks
+      '#about .rounded-2xl', '#team .rounded-2xl', '#cases .rounded-2xl', '#contact form', '#contact .rounded-2xl'
+    ];
+    const toArray = (sel) => Array.from(document.querySelectorAll(sel));
+    const addReveal = (nodes) => nodes.forEach((el, i) => { el.classList.add('reveal'); el.style.setProperty('--delay', (i * 80) + 'ms'); });
+    revealTargets.forEach(sel => addReveal(toArray(sel)));
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('show'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
